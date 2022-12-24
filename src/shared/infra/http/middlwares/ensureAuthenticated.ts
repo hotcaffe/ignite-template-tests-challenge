@@ -30,7 +30,9 @@ export async function ensureAuthenticated(
     };
 
     next();
-  } catch {
+  } catch (err) {
+
+    console.log(err)
     throw new JWTInvalidTokenError()
   }
 }
